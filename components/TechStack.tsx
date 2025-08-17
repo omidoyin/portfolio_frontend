@@ -2,18 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import {
-  Code2,
-  Database,
-  Globe,
-  Settings,
-  React,
-  Node,
-  Python,
-  Git,
-  Docker,
-  Aws,
-} from "lucide-react";
+import { Code2, Database, Globe, Settings } from "lucide-react";
 
 export default function TechStack() {
   const [ref, inView] = useInView({
@@ -187,4 +176,3 @@ export default function TechStack() {
     </section>
   );
 }
-
