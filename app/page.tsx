@@ -51,12 +51,14 @@ export default function Home() {
       <footer className="bg-gray-100 dark:bg-dark-200 py-8">
         <div className="container-custom text-center">
           <p className="text-gray-600 dark:text-gray-400">
-            © 2024 Your Name. Built with Next.js and TailwindCSS.
+            © 2024 Ayodeji Omidoyin. Built with Next.js and TailwindCSS.
           </p>
         </div>
       </footer>
     </div>
   );
 }
+
+
 
 

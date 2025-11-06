@@ -46,7 +46,7 @@ export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
             className="text-2xl font-bold text-gradient"
             whileHover={{ scale: 1.05 }}
           >
-            YourName
+            AO
           </motion.div>
 
           {/* Desktop Navigation */}

@@ -1,6 +1,6 @@
-"use client";
+ "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
@@ -13,12 +13,15 @@ import {
   Twitter,
 } from "lucide-react";
 import toast from "react-hot-toast";
+import emailjs from "@emailjs/browser";
 
 export default function ContactSection() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const formRef = useRef<HTMLFormElement>(null);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -69,23 +72,25 @@ export default function ContactSection() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const values = { ...formData };
+      console.log(values);
 
-      if (response.ok) {
-        toast.success("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        const error = await response.json();
-        toast.error(error.message || "Failed to send message");
-      }
-    } catch (error) {
-      console.error("Error sending message:", error);
+      if (!formRef.current) throw new Error("Form ref not available");
+
+      await emailjs.sendForm(
+        "service_xevny38",
+        "template_0v6clx7",
+        formRef.current,
+        "x8b-uiEYCAK-uKH4E"
+      );
+
+      toast.success("Message sent successfully!");
+
+      // Reset the form and state
+      formRef.current.reset();
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error: any) {
+      console.log(error?.text || error);
       toast.error("Failed to send message. Please try again.");
     } finally {
       setIsSubmitting(false);
@@ -96,20 +101,20 @@ export default function ContactSection() {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "your.email@example.com",
-      link: "mailto:your.email@example.com",
+      value: "omidoyinayodeji@gmail.com",
+      link: "mailto:omidoyinayodeji@gmail.com",
     },
-    {
-      icon: <MapPin className="w-6 h-6" />,
-      title: "Location",
-      value: "San Francisco, CA",
-      link: null,
-    },
+    // {
+    //   icon: <MapPin className="w-6 h-6" />,
+    //   title: "Location",
+    //   value: "San Francisco, CA",
+    //   link: null,
+    // },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      value: "+234 8105 281 572",
+      link: "tel:+2348105281572",
     },
   ];
 
@@ -117,21 +122,21 @@ export default function ContactSection() {
     {
       name: "GitHub",
       icon: <Github className="w-6 h-6" />,
-      url: "https://github.com/yourusername",
+      url: "https://github.com/omidoyin",
       color: "hover:bg-gray-900 hover:text-white",
     },
     {
       name: "LinkedIn",
       icon: <Linkedin className="w-6 h-6" />,
-      url: "https://linkedin.com/in/yourusername",
+      url: "https://www.linkedin.com/in/ayodeji-omidoyin-s-68a789125",
       color: "hover:bg-blue-600 hover:text-white",
     },
-    {
-      name: "Twitter",
-      icon: <Twitter className="w-6 h-6" />,
-      url: "https://twitter.com/yourusername",
-      color: "hover:bg-blue-400 hover:text-white",
-    },
+    // {
+    //   name: "Twitter",
+    //   icon: <Twitter className="w-6 h-6" />,
+    //   url: "https://twitter.com/AyodejiOmidoyin",
+    //   color: "hover:bg-blue-400 hover:text-white",
+    // },
   ];
 
   return (
@@ -166,7 +171,7 @@ export default function ContactSection() {
               Send Me a Message
             </h3>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
                   htmlFor="name"
@@ -336,5 +341,7 @@ export default function ContactSection() {
     </section>
   );
 }
+
+
 
 

@@ -34,7 +34,7 @@ export default function Hero() {
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-purple-50 dark:from-dark-300 dark:to-dark-200 opacity-50" />
 
-      <div className="container-custom relative z-10 text-center">
+      <div className="container-custom relative z-10 text-center mt-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -54,7 +54,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6"
           >
-            <span className="text-gradient">Your Name</span>
+            <span className="text-gradient">Ayodeji Omidoyin</span>
           </motion.h1>
 
           {/* Title */}
@@ -70,9 +70,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed"
           >
-            I build modern, scalable web applications with cutting-edge
-            technologies. Passionate about creating exceptional user experiences
-            and solving complex problems.
+            I build AI-powered fullstack applications that combine smart automation, sleek design, and scalable architecture to deliver exceptional user experiences.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -106,7 +104,7 @@ export default function Hero() {
             className="flex justify-center items-center space-x-6 mb-8"
           >
             <motion.a
-              href="https://github.com/yourusername"
+              href="https://github.com/omidoyin"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-gray-100 dark:bg-dark-100 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
@@ -117,7 +115,8 @@ export default function Hero() {
             </motion.a>
 
             <motion.a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/ayodeji-omidoyin-s-68a789125"
+              
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-gray-100 dark:bg-dark-100 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
@@ -128,7 +127,7 @@ export default function Hero() {
             </motion.a>
 
             <motion.a
-              href="mailto:your.email@example.com"
+              href="mailto:omidoyinayodeji@gmail.com"
               className="p-3 rounded-full bg-gray-100 dark:bg-dark-100 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.9 }}
@@ -155,5 +154,7 @@ export default function Hero() {
     </section>
   );
 }
+
+
 
 

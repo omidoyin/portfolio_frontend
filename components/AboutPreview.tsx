@@ -10,6 +10,15 @@ export default function AboutPreview() {
     threshold: 0.1,
   });
 
+  const showcaseItems = [
+    { title: 'E-commerce Dashboard', tagline: 'Next.js + Tailwind', emoji: '🛒' },
+    { title: 'Chat App', tagline: 'Socket.io + Node', emoji: '💬' },
+    { title: 'Portfolio Site', tagline: 'React + SSR', emoji: '🎨' },
+    { title: 'API Service', tagline: 'Express + MongoDB', emoji: '🛠️' },
+    { title: 'Analytics UI', tagline: 'Charts + D3', emoji: '📊' },
+    { title: 'Landing Pages', tagline: 'A/B tested', emoji: '🚀' },
+  ];
+
   return (
     <section id="about" className="section-padding bg-gray-50 dark:bg-dark-200">
       <div className="container-custom">
@@ -37,24 +46,20 @@ export default function AboutPreview() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="space-y-4 text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
             >
+
               <p>
-                I'm a passionate Full Stack Developer with over 5 years of
-                experience building modern web applications. I love turning
-                complex problems into simple, beautiful, and intuitive
-                solutions.
+              I’m a Fullstack Developer with over 3 years of experience, integrating AI and machine learning into web applications to create intelligent, data-driven solutions. I’m also a Data Science Enthusiast passionate about using data and automation to solve real-world problems.
               </p>
 
               <p>
-                When I'm not coding, you can find me exploring new technologies,
-                contributing to open-source projects, or sharing knowledge with
-                the developer community. I believe in continuous learning and
-                staying up-to-date with the latest industry trends.
+               Over the years, I’ve worked on a wide range of projects — from small-scale applications to large, complex systems — covering everything from design and development to deployment and optimization.
               </p>
 
               <p>
-                My approach combines technical expertise with creative
-                problem-solving, ensuring that every project I work on delivers
-                exceptional user experiences and robust functionality.
+               Skilled in Python, JavaScript, TypeScript, SQL, Node.js, Kotlin, and HTML5, I build scalable fullstack systems that combine automation, analytics, and intelligent functionality to enhance user experience and business efficiency.
+              </p>
+              <p>
+               I’m constantly exploring new ways to merge AI and software engineering, creating solutions that are not just functional but also adaptive and insightful — empowering smarter, data-informed decisions.
               </p>
             </motion.div>
 
@@ -66,7 +71,7 @@ export default function AboutPreview() {
               className="flex flex-col sm:flex-row gap-4"
             >
               <motion.a
-                href="/resume.pdf"
+                href="/Omidoyin_Ayodeji_resume_fullstack.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary flex items-center justify-center gap-2"
@@ -100,14 +105,31 @@ export default function AboutPreview() {
               {/* Main Photo */}
               <div className="w-full aspect-square rounded-2xl bg-gradient-to-br from-primary-400 to-purple-600 p-1">
                 <div className="w-full h-full bg-gray-200 dark:bg-dark-100 rounded-2xl flex items-center justify-center">
-                  <div className="text-center text-gray-500 dark:text-gray-400">
-                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
-                      <span className="text-2xl font-bold text-gray-600 dark:text-gray-400">
-                        YN
-                      </span>
-                    </div>
-                    <p className="text-sm">Photo Placeholder</p>
-                    <p className="text-xs">Replace with your photo</p>
+                  <div className="w-full h-full rounded-2xl overflow-hidden">
+                    {/* Animated Work Showcase */}
+                  
+                    <img src="/mine.jpg" alt="" />
+                    {/* <div className="w-full h-full bg-gray-200 dark:bg-dark-100 rounded-2xl">
+                      <div className="relative w-full h-full p-4">
+                        <motion.div
+                          className="flex gap-4 absolute left-0 right-0 top-1/2 -translate-y-1/2 will-change-transform"
+                          animate={{ x: ["0%", "-50%"] }}
+                          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+                        >
+                          {[...showcaseItems, ...showcaseItems].map((item, idx) => (
+                            <a
+                              key={idx}
+                              href="#projects"
+                              className="min-w-[220px] max-w-[220px] bg-white/80 dark:bg-dark-100/80 backdrop-blur-sm border border-gray-200 dark:border-dark-300 rounded-xl p-4 shadow-sm hover:shadow-md transition-all"
+                            >
+                              <div className="text-2xl mb-2">{item.emoji}</div>
+                              <div className="font-semibold text-gray-900 dark:text-white">{item.title}</div>
+                              <div className="text-sm text-gray-600 dark:text-gray-400">{item.tagline}</div>
+                            </a>
+                          ))}
+                        </motion.div>
+                      </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
