@@ -17,7 +17,7 @@ export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
-      text: "Hi! I'm your AI assistant. I can help you learn more about the developer's skills, experience, and projects. What would you like to know?",
+      text: "Hi! I'm your AI assistant. I can help you learn more about ayodeji's skills, experience, and projects. What would you like to know?",
       sender: "bot",
       timestamp: new Date(),
     },
@@ -80,7 +80,7 @@ export default function Chatbot() {
       console.error("Error sending message:", error);
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: "I'm sorry, I'm having trouble connecting right now. Please try again later or contact the developer directly.",
+        text: "I'm sorry, I'm having trouble connecting right now. Please try again later or contact Ayodeji directly.",
         sender: "bot",
         timestamp: new Date(),
       };
@@ -150,7 +150,7 @@ export default function Chatbot() {
                       AI Assistant
                     </h3>
                     <p className="text-xs text-gray-500 dark:text-gray-400">
-                      Ask me anything about the developer
+                      Ask me anything about Ayodeji Omidoyin
                     </p>
                   </div>
                 </div>

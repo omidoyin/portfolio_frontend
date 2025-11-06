@@ -20,7 +20,7 @@ import ContactSection from "@/components/ContactSection";
 import Chatbot from "@/components/Chatbot";
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     if (darkMode) {
