@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 import { ExternalLink, Github, Play, X } from "lucide-react";
 import {sampleProjects} from "../data/data.js"
+import Image from 'next/image';
 
 export default function ProjectsPreview() {
   const [ref, inView] = useInView({
@@ -92,7 +93,7 @@ export default function ProjectsPreview() {
             >
               {/* Project Image */}
               <div className="relative overflow-hidden">
-                <img
+                <Image 
                   src={project.imageUrl}
                   alt={project.title}
                   className="w-full h-48 object-contain group-hover:scale-110 transition-transform duration-300"
@@ -266,7 +267,7 @@ export default function ProjectsPreview() {
             <div className="flex-1 overflow-y-auto p-6 space-y-6">
               {/* Project Image */}
               <div className="relative rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-700">
-                <img
+               <Image 
                   src={selectedProject.imageUrl}
                   alt={selectedProject.title}
                   className="w-full h-64 object-contain"
